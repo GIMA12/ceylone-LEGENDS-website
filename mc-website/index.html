@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceylone Legends | Ultimate Minecraft Survival</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="Ceylone Legends Logo" class="logo-img">
+                <span>Ceylone <span class="text-blue">Legends</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#status">Status</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#rules">Rules</a></li>
+                <li><a href="#discord">Discord</a></li>
+            </ul>
+            <div class="nav-mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Home Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles" id="particles-js"></div>
+        <div class="hero-content">
+            <div class="badge glow-blue">Now Online: <span id="hero-player-count">0</span> Players</div>
+            <h1 class="hero-title">CEYLONE <span class="text-gradient">LEGENDS</span></h1>
+            <p class="hero-subtitle">Ultimate Minecraft Survival Experience</p>
+            <div class="hero-buttons">
+                <a href="#discord" class="btn btn-primary glow-btn-green">
+                    <i class="fa-solid fa-play"></i> Join Server
+                </a>
+                <button class="btn btn-secondary glow-btn-blue copy-ip-btn" data-ip="82.41.119.16:25034">
+                    <i class="fa-solid fa-copy"></i> <span class="ip-text">play.ceylonelegends.online:25034</span>
+                </button>
+                <a href="https://discord.gg/jFCs7Ggc" target="_blank" class="btn btn-discord glow-btn-purple">
+                    <i class="fa-brands fa-discord"></i> Discord
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Server Status Panel & 7. Admin Panel Stats -->
+    <section id="status" class="status-section section-padding pb-0">
+        <div class="container relative z-10">
+            <div class="section-header text-center">
+                <h2 class="section-title">Server <span class="text-green">Status</span></h2>
+                <div class="title-divider"></div>
+            </div>
+
+            <div class="status-panel glass-card">
+                <div class="status-header">
+                    <img id="server-icon" src="logo.png" alt="Server Icon" class="server-icon">
+                    <div class="status-info-header">
+                        <h3 id="server-hostname">play.ceylonelegends.online:25034</h3>
+                        <div class="status-badge" id="server-status-badge">
+                            <span class="pulse-dot"></span> <span id="status-text">Checking...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="motd-container">
+                    <p id="server-motd" class="motd-text">Fetching server information...</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-users text-blue"></i>
+                        <div class="stat-val"><span id="players-online">0</span> / <span id="players-max">0</span></div>
+                        <div class="stat-label">Players Online</div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-code-branch text-green"></i>
+                        <div class="stat-val" id="server-version">1.x.x</div>
+                        <div class="stat-label">Version</div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-wifi text-blue"></i>
+                        <div class="stat-val"><span id="server-ping">0</span>ms</div>
+                        <div class="stat-label">Latency</div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-server text-green"></i>
+                        <div class="stat-val" id="server-software">Vanilla</div>
+                        <div class="stat-label">Software</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Online Players -->
+    <section id="players" class="players-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Online <span class="text-blue">Players</span></h2>
+                <div class="title-divider"></div>
+            </div>
+
+            <div id="players-list" class="players-grid">
+                <!-- Player cards dynamically injected here -->
+                <div class="no-players-message w-full text-center text-muted col-span-full">
+                    No players currently online or data is loading...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Server Features -->
+    <section id="features" class="features-section section-padding bg-alt">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Server <span class="text-green">Features</span></h2>
+                <div class="title-divider"></div>
+                <p class="section-subtitle">Experience the best features tailored for our community.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card glass-card hover-lift">
+                    <div class="feature-icon glow-text-green">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3>Survival</h3>
+                    <p>Thrive in our survival world with balanced economy, exciting quests, and robust land protection
+                        systems to keep your builds safe.</p>
+                </div>
+
+                <div class="feature-card glass-card hover-lift">
+                    <div class="feature-icon glow-text-blue">
+                        <i class="fa-solid fa-bed"></i>
+                    </div>
+                    <h3>BedWars</h3>
+                    <p>Join intense, competitive BedWars matches. Protect your bed, gather resources, and eliminate
+                        opponents to become the ultimate champion.</p>
+                </div>
+
+                <div class="feature-card glass-card hover-lift">
+                    <div class="feature-icon glow-text-green">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3>Custom Plugins</h3>
+                    <p>Enjoy unique gameplay mechanics written exclusively for Ceylone Legends, adding new items,
+                        enchantments, and fun events.</p>
+                </div>
+
+                <div class="feature-card glass-card hover-lift">
+                    <div class="feature-icon glow-text-blue">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <h3>Community</h3>
+                    <p>Join a friendly, active, and respectful community of gamers. Participate in discord events,
+                        giveaways, and build contests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Server Rules -->
+    <section id="rules" class="rules-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Server <span class="text-blue">Rules</span></h2>
+                <div class="title-divider"></div>
+                <p class="section-subtitle">Please follow these rules to maintain a fun environment for everyone.</p>
+            </div>
+
+            <div class="rules-grid">
+                <div class="rule-card">
+                    <div class="rule-number">01</div>
+                    <div class="rule-content">
+                        <h4>No Hacking</h4>
+                        <p>Use of modified clients (x-ray, reach, fly) or unfair advantages is strictly prohibited and
+                            results in a permanent ban.</p>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <div class="rule-number">02</div>
+                    <div class="rule-content">
+                        <h4>Respect Players</h4>
+                        <p>No racism, sexism, homophobia, harassment, or extreme toxicity. Be respectful to all members.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <div class="rule-number">03</div>
+                    <div class="rule-content">
+                        <h4>No Spamming</h4>
+                        <p>Avoid flooding the chat, excessive caps, character spam, or advertising other servers.</p>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <div class="rule-number">04</div>
+                    <div class="rule-content">
+                        <h4>No Griefing</h4>
+                        <p>Destroying or altering other players' builds without permission is not allowed outside of
+                            designated PvP/raid zones.</p>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <div class="rule-number">05</div>
+                    <div class="rule-content">
+                        <h4>Listen to Staff</h4>
+                        <p>The staff's word is final. Do not argue with staff members in public chat; use discord
+                            tickets for disputes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Discord Section -->
+    <section id="discord" class="discord-section section-padding">
+        <div class="container">
+            <div class="discord-card glass-card text-center">
+                <i class="fa-brands fa-discord discord-large-icon"></i>
+                <h2>Join Our <span class="text-gradient">Discord Community</span></h2>
+                <p>Stay updated with news, participate in giveaways, connect with other players, and get quick support
+                    from our staff team.</p>
+                <a href="https://discord.gg/jFCs7Ggc" target="_blank"
+                    class="btn btn-discord glow-btn-purple mt-4 discord-large-btn">
+                    <i class="fa-brands fa-discord"></i> Join Discord Server
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="logo.png" alt="Ceylone Legends Logo" class="logo-img">
+                        <span>Ceylone <span class="text-blue">Legends</span></span>
+                    </div>
+                    <p class="mt-2 text-muted">The ultimate Minecraft survival and minigame experience. Join us today
+                        and forge your legend!</p>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#rules">Rules</a></li>
+                        <li><a href="#features">Features</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Connect</h3>
+                    <p><i class="fa-solid fa-server text-green"></i> play.ceylonelegends.online:25034</p>
+                    <p><i class="fa-brands fa-discord text-blue"></i> discord.gg/jFCs7Ggc</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Ceylone Legends. All rights reserved.</p>
+                <p class="text-muted small">Not affiliated with Mojang AB.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Particles.js for background effects -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- SweetAlert for nice popups (copy IP) -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
